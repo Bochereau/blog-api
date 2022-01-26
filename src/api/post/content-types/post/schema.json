@@ -34,7 +34,7 @@
         "videos"
       ]
     },
-    "theme": {
+    "slug": {
       "type": "string"
     },
     "content": {
@@ -45,6 +45,11 @@
       "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "post"
+    },
+    "theme": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::theme.theme"
     }
   }
 }
