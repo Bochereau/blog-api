@@ -13,13 +13,19 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "subtitle": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "author": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "date": {
       "type": "date"
@@ -27,18 +33,19 @@
     "picture": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+        "images"
       ]
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "comments": {
       "type": "relation",
@@ -50,6 +57,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::theme.theme"
+    },
+    "introduction": {
+      "type": "text"
+    },
+    "conclusion": {
+      "type": "text"
     }
   }
 }
